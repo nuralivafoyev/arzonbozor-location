@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Magic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header with language selector -->
+        <header class="header">
+            <div class="language-selector">
+                <select id="languageSelect" class="language-dropdown">
+                    <option value="en">English</option>
+                    <option value="uz">O'zbekcha</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <!-- Hero section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-translate="title">Discover Your Location</h1>
+                    <p class="hero-subtitle" data-translate="subtitle">Experience the magic of modern geolocation</p>
+                    
+                    <!-- Location request button -->
+                    <button id="getLocationBtn" class="location-btn" data-translate="getLocation">
+                        <span class="btn-icon">📍</span>
+                        <span class="btn-text">Get My Location</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading state -->
+            <section id="loadingSection" class="loading-section hidden">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+                <p class="loading-text" data-translate="loading">Detecting your location...</p>
+            </section>
+
+            <!-- Location display -->
+            <section id="locationSection" class="location-section hidden">
+                <div class="location-card">
+                    <div class="location-header">
+                        <h2 class="location-title" data-translate="yourLocation">Your Location</h2>
+                        <div class="location-icon">🌍</div>
+                    </div>
+                    
+                    <div class="coordinates-container">
+                        <div class="coordinate-item">
+                            <span class="coordinate-label" data-translate="latitude">Latitude</span>
+                            <span id="latitudeValue" class="coordinate-value">--</span>
+                        </div>
+                        <div class="coordinate-item">
+                            <span class="coordinate-label" data-translate="longitude">Longitude</span>
+                            <span id="longitudeValue" class="coordinate-value">--</span>
+                        </div>
+                        <div class="coordinate-item">
+                            <span class="coordinate-label" data-translate="accuracy">Accuracy</span>
+                            <span id="accuracyValue" class="coordinate-value">--</span>
+                        </div>
+                    </div>
+
+                    <!-- Map container -->
+                    <div id="mapContainer" class="map-container">
+                        <div id="map" class="map"></div>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="action-buttons">
+                        <button id="refreshLocationBtn" class="action-btn refresh-btn" data-translate="refresh">
+                            <span class="btn-icon">🔄</span>
+                            <span class="btn-text">Refresh</span>
+                        </button>
+                        <button id="shareLocationBtn" class="action-btn share-btn" data-translate="share">
+                            <span class="btn-icon">📤</span>
+                            <span class="btn-text">Share</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error state -->
+            <section id="errorSection" class="error-section hidden">
+                <div class="error-card">
+                    <div class="error-icon">⚠️</div>
+                    <h3 class="error-title" data-translate="errorTitle">Location Access Denied</h3>
+                    <p id="errorMessage" class="error-message" data-translate="errorMessage">
+                        Unable to access your location. Please enable location services and try again.
+                    </p>
+                    <button id="retryBtn" class="retry-btn" data-translate="retry">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Try Again</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text" data-translate="footer">
+                Powered by modern web technologies
+            </p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
