@@ -3,19 +3,19 @@ const translations = {
     en: {
         title: "Our Location",
         getLocation: "Get Location",
-        subtitle: "Navoi region, Old city, opposite the Telegraph",
-        footer: "Powered by: modern Nurali Vafoyev",
+        subtitle: "Navoi region, Karmana district, Old city, opposite the Telegraph",
+        footer: "Powered by: Nurali Vafoyev",
     },
     uz: {
         title: "Bizning joylashuvimiz",
         getLocation: "Joylashuvni Aniqlash",
-        subtitle: "Navoiy viloyati, Eski shahar, Telegraf ro'parasida",
+        subtitle: "Navoiy viloyati, Karmana tumani, Eski shahar, Telegraf ro'parasida",
         footer: "Nurali Vafoyev tomonidan yaratildi",
     },
     ru: {
         title: "Наше местоположение",
         getLocation: "Определить Местоположение",
-        subtitle: "Навоийская область, Старый город, напротив Телеграфа",
+        subtitle: "Навоийская область, Корманский район, Старый город, напротив Телеграфа",
         footer: "Создано Нурали Вафоевым",
     }
 };
@@ -39,7 +39,7 @@ function applyTranslations(lang) {
 
 // Sahifa yuklanganda default til
 window.addEventListener("DOMContentLoaded", () => {
-  const defaultLang = "uz";
+  const defaultLang = "en";
   switcher.value = defaultLang;
   applyTranslations(defaultLang);
 });
